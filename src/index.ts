@@ -1,5 +1,9 @@
 import "dotenv/config";
+import { DEFAULT_PORT } from "./constants/constants";
+import { server } from "./server";
 
-const port = process.env.PORT || 6000;
+const port = process.env.PORT || DEFAULT_PORT;
 
-console.log(port);
+server.listen(port, () => {
+  console.log(`Server running at port ${port}`);
+});
