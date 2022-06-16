@@ -2,9 +2,9 @@
   "name": "node-crud-api",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env jest",
     "start:dev": "cross-env npx nodemon",
-    "start:prod": "npx tsc && node build/index.js"
+    "start:prod": "cross-env npx tsc && node build/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,13 +17,18 @@
   },
   "homepage": "https://github.com/wunlei/node-crud-api#readme",
   "devDependencies": {
+    "@types/jest": "^28.1.2",
+    "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0",
+    "jest": "^28.1.1",
     "nodemon": "^2.0.16",
     "prettier": "^2.7.1",
+    "supertest": "^6.2.3",
+    "ts-jest": "^28.0.5",
     "ts-node": "^10.8.1"
   },
   "dependencies": {
