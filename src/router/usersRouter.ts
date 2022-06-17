@@ -67,7 +67,7 @@ class UsersRouter {
       return false;
     } else {
       const isStrings = user.hobbies.every(
-        (element: any) => typeof element === "string"
+        (element: unknown) => typeof element === "string"
       );
 
       if (!isStrings) {
@@ -158,7 +158,7 @@ class UsersRouter {
     try {
       if (!uuidValidate(id)) {
         response.writeHead(400, { "Content-Type": "application/json" });
-        response.end({ message: `UserId is invalid` });
+        response.end(JSON.stringify({ message: `UserId is invalid` }));
         return;
       }
 
