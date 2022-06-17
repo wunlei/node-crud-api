@@ -3,6 +3,7 @@ import { DataBase } from "../databases/db";
 import { v4 as uuidv4 } from "uuid";
 import { validate as uuidValidate } from "uuid";
 import { User } from "../types/index.types";
+import { userParams } from "../constants/constants";
 
 class UsersRouter {
   db: DataBase;
@@ -51,8 +52,6 @@ class UsersRouter {
   }
 
   validateUserParams(user: Omit<User, "id">) {
-    const userParams = Object.keys(user);
-
     const isAllParamsProvided = userParams.every((param) => user[param]);
 
     if (!isAllParamsProvided) {
@@ -86,7 +85,7 @@ class UsersRouter {
         response.writeHead(400, { "Content-Type": "application/json" });
         response.end(
           JSON.stringify({
-            message: "Invalid fields content type or fields missed",
+            message: "Invalid field data type or missing required fields",
           })
         );
         return;
