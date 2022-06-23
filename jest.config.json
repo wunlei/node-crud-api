@@ -1,0 +1,15 @@
+{
+  "clearMocks": true,
+  "coverageProvider": "v8",
+  "extensionsToTreatAsEsm": [".ts"],
+  "globals": {
+    "ts-jest": {
+      "useESM": true
+    }
+  },
+  "moduleNameMapper": {
+    "^(\\.{1,2}/.*)\\.js$": "$1"
+  },
+  "preset": "ts-jest",
+  "resetMocks": true
+}
